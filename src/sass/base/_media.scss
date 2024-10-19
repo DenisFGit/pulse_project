@@ -17,6 +17,23 @@
             align-items: center;
         }
     }
+    .consultation {
+        &__wrapper {
+            align-items: center;
+        }
+        &__text {
+            font-size: 18px;
+            br {
+                display: none;
+            }
+        }
+    }
+    .title {
+        &_big {
+            text-align: center;
+            font-size: 30px;
+        }
+    }
 }
 
 @media(max-width:767px) {
@@ -45,6 +62,15 @@
             font-size: 22px;
         }
     }
+    .consultation {
+        &__text {
+            font-size: 18px;
+            text-align: center;
+            br {
+                display: inline;
+            }
+        }
+    }
 }
 
 @media(max-width:575px) {
@@ -66,12 +92,38 @@
     //         flex-direction: row;
     //     }
     // }
+    // .header {
+    //     flex-direction: column;
+    //     gap: 15px;
+    //     // &__official {
+    //     //     // span {
+    //     //     //     display: inline;
+    //     //     // }
+    //     // }
+    //     &__phone {
+    //         font-size: 14px;
+    //     }
+    //     // &__contacts {
+    //     //     flex-direction: row;
+    //     // }
+    //     // .button {
+    //     //     width: 100px;
+    //     // }
+    // }
+    .header {
+        display: none;
+    }
+    .header-hidden {
+        display: block;
+    }
     .promo {
         &__header {
             text-align: center;
+            font-size: 30px;
         }
         &__subheader {
             text-align: center;
+            font-size: 18px;
         }
         &__icons {
             width: 300px;
@@ -81,5 +133,19 @@
         &__icon {
             margin-bottom: 20px;
         }
+        &__burger-wrapper {
+            display: flex;
+        }
+    }
+    .title {
+        font-size: 20px;
+    }
+    .consultation {
+        &__text {
+            font-size: 14px;
+        }
+    }
+    .feed-form {
+        width: 270px;
     }
 }

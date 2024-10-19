@@ -53,4 +53,10 @@
             // text-decoration: none;
         }
     }
+    &__burger-wrapper {
+        display: none;
+        padding: 0 10px;
+        justify-content: flex-end;
+        align-items: center;
+    }
 }
