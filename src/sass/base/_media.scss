@@ -115,6 +115,12 @@
     }
     .header-hidden {
         display: block;
+        position: absolute;
+        left: -100%;
+        transition: 0.6s all;
+        &_active {
+            left: 5%;
+        }
     }
     .promo {
         &__header {

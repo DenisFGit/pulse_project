@@ -6,4 +6,9 @@
         background-color: #fff;
         margin-top: 2px;
     }
+    &_active {
+        span {
+            background-color: red;
+        }
+    }
 }
