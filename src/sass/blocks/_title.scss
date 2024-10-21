@@ -4,6 +4,7 @@
     line-height: 100%;
     text-align: center;
     color: #0d0d0d;
+    text-transform: uppercase;
     &_big {
         // width: 799px;
         font-size: 36px;
@@ -11,5 +12,9 @@
         text-transform: uppercase;
         color: #fff;
         text-align: left;
+    }
+    &_catalog {
+        font-weight: 400;
+        line-height: 150%;
     }
 }
