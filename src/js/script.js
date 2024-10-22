@@ -47,18 +47,18 @@ document.querySelector('.next').addEventListener('click', function () {
     slider.goTo('next');
 });
 
-const catalogItemWrapper = document.querySelector('.catalog-item__content');
-const catalogItemWrapperDesc = document.querySelector('.catalog-item__list');
-console.log(catalogItemWrapperDesc);
-const img = document.getElementsByClassName('catalog-item__first-price');
-console.log(img);
+// const catalogItemWrapper = document.querySelector('.catalog-item__content');
+// const catalogItemWrapperDesc = document.querySelector('.catalog-item__list');
+// console.log(catalogItemWrapperDesc);
+// const img = document.getElementsByClassName('catalog-item__first-price');
+// console.log(img);
 
-for (let i = 0; i < img.length; i++) {
-    img[i].addEventListener('click', function () {
-        catalogItemWrapperDesc.classList.toggle('catalog-item__list_active');
-        catalogItemWrapper.classList.toggle('catalog-item__content_hidden')
-    })
-}
+// for (let i = 0; i < img.length; i++) {
+//     img[i].addEventListener('click', function () {
+//         catalogItemWrapperDesc.classList.toggle('catalog-item__list_active');
+//         catalogItemWrapper.classList.toggle('catalog-item__content_hidden')
+//     })
+// }
 //-------------------работает---------------------
 
 // const catalogItemWrapper = document.querySelectorAll('.catalog-item__wrapper');
@@ -73,3 +73,15 @@ for (let i = 0; i < img.length; i++) {
 //     })
 // }
 
+let content = document.querySelector('.catalog-item__content');
+console.log(content);
+let list = document.querySelector('.catalog-item__list');
+
+let price = document.getElementsByClassName('catalog-item__first-price');
+
+for (let i = 0; i < price.length; i++) {
+    price[i].addEventListener('click', function () {
+        content.classList.toggle('catalog-item__content_active');
+        list.classList.toggle('catalog-item__list_active');
+    })
+}
