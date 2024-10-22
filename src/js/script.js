@@ -46,3 +46,30 @@ document.querySelector('.prev').addEventListener('click', function () {
 document.querySelector('.next').addEventListener('click', function () {
     slider.goTo('next');
 });
+
+const catalogItemWrapper = document.querySelector('.catalog-item__content');
+const catalogItemWrapperDesc = document.querySelector('.catalog-item__list');
+console.log(catalogItemWrapperDesc);
+const img = document.getElementsByClassName('catalog-item__first-price');
+console.log(img);
+
+for (let i = 0; i < img.length; i++) {
+    img[i].addEventListener('click', function () {
+        catalogItemWrapperDesc.classList.toggle('catalog-item__list_active');
+        catalogItemWrapper.classList.toggle('catalog-item__content_hidden')
+    })
+}
+//-------------------работает---------------------
+
+// const catalogItemWrapper = document.querySelectorAll('.catalog-item__wrapper');
+// const catalogItemWrapperDesc = document.getElementsByClassName('catalog-item__wrapper-desc');
+// console.log(catalogItemWrapperDesc);
+// const img = document.getElementsByClassName('catalog-item__img');
+// console.log(img);
+
+// for (let i = 0; i < img.length; i++) {
+//     img[i].addEventListener('click', function () {
+//         catalogItemWrapperDesc.classList.toggle('catalog-item__wrapper-desc_active')
+//     })
+// }
+

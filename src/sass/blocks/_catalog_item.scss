@@ -36,6 +36,7 @@
         text-decoration: underline;
         text-align: center;
         color: #c70101;
+        pointer-events: none;
     }
     &__footer {
         display: flex;
@@ -57,16 +58,36 @@
         color: #050505;
         margin-top: 2px;
     }
-    // &__btn {
-    //     width: 131px;
-    //     height: 40px;
-    //     border-radius: 5px;
-    //     border: none;
-    //     background-color: #c70101;
-    //     font-weight: 500;
-    //     font-size: 14px;
-    //     text-transform: uppercase;
-    //     text-align: center;
-    //     color: #fff;
+    &__wrapper {
+        width: calc(200% + 40px);
+        display: flex;
+
+    }
+    &__content {
+        width: 50%;
+        margin-right: 20px;
+        transform: translateX(-100%);
+        &_active {
+            transform: translateX(0%);
+        }
+
+    }
+    &__list {
+        width: 50%;
+        margin-left: 20px;
+    }
+
+    // &__content {
+    //     transition: transform 0.6s all;
+    //     &_hidden {
+    //         display: none;
+    //     }
+    // }
+    // &__list {
+    //     display: none;
+    //     transition: transform 0.6s all;
+    //     &_active {
+    //         display: block;
+    //     }
     // }
 }
