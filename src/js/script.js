@@ -73,15 +73,61 @@ document.querySelector('.next').addEventListener('click', function () {
 //     })
 // }
 
-let content = document.querySelector('.catalog-item__content');
-console.log(content);
-let list = document.querySelector('.catalog-item__list');
+// let content = document.querySelector('.catalog-item__content');
+// console.log(content);
+// let list = document.querySelector('.catalog-item__list');
 
-let price = document.getElementsByClassName('catalog-item__first-price');
+// let price = document.getElementsByClassName('catalog-item__first-price');
 
-for (let i = 0; i < price.length; i++) {
-    price[i].addEventListener('click', function () {
-        content.classList.toggle('catalog-item__content_active');
-        list.classList.toggle('catalog-item__list_active');
-    })
-}
+// for (let i = 0; i < price.length; i++) {
+//     price[i].addEventListener('click', function () {
+//         content.classList.toggle('catalog-item__content_active');
+//         list.classList.toggle('catalog-item__list_active');
+//     })
+// }
+
+//============вариант с перемещением по translateX() =========================
+
+
+// $('.catalog-item__first-price').each(function (i) {
+//     $(this).on('click', function (e) {
+//         e.preventDefault();
+//         $('.catalog-item__content').eq(i).toggleClass('catalog-item__content_active');
+//         $('.catalog-item__list').eq(i).toggleClass('catalog-item__list_active');
+//     })
+// })
+
+
+// // Select all elements with the class 'catalog-item__first-price'
+// document.querySelectorAll('.catalog-item__link').forEach(function (element, i) {
+//     // Add a click event listener to each element
+//     element.addEventListener('click', function (e) {
+//         e.preventDefault(); // Prevent the default action of the element
+
+//         // Toggle the 'catalog-item__content_active' class on all elements with the class 'catalog-item__content'
+//         document.querySelectorAll('.catalog-item__content').forEach(function (content) {
+//             content.classList.toggle('catalog-item__content_active');
+//         });
+
+//         // Toggle the 'catalog-item__list_active' class on all elements with the class 'catalog-item__list'
+//         document.querySelectorAll('.catalog-item__list').forEach(function (list) {
+//             list.classList.toggle('catalog-item__list_active');
+//         });
+//     });
+// });
+
+//----------------for all elements in the moment-------------------------
+
+// Select all elements with the class 'catalog-item__first-price'
+document.querySelectorAll('.catalog-item__first-price').forEach(function (element, i) {
+    // Add a click event listener to each element
+    element.addEventListener('click', function (e) {
+        e.preventDefault(); // Prevent the default action of the element
+
+        // Select the corresponding 'catalog-item__content' based on index and toggle the class
+        document.querySelectorAll('.catalog-item__content')[i].classList.toggle('catalog-item__content_active');
+
+        // Select the corresponding 'catalog-item__list' based on index and toggle the class
+        document.querySelectorAll('.catalog-item__list')[i].classList.toggle('catalog-item__list_active');
+    });
+});
