@@ -119,15 +119,47 @@ document.querySelector('.next').addEventListener('click', function () {
 //----------------for all elements in the moment-------------------------
 
 // Select all elements with the class 'catalog-item__first-price'
-document.querySelectorAll('.catalog-item__first-price').forEach(function (element, i) {
+
+document.querySelectorAll('.catalog-item__link').forEach(function (element, i) {
     // Add a click event listener to each element
     element.addEventListener('click', function (e) {
         e.preventDefault(); // Prevent the default action of the element
 
-        // Select the corresponding 'catalog-item__content' based on index and toggle the class
+        const link = e.target;
+        const originalText = link.dataset.original || link.textContent;  // Store the original text if it's not already stored
+        const newText = "Назад";
+        newTextUpper = newText.toUpperCase();
+        // Check current text and toggle
+        console.log(originalText);
+        console.log(link.textContent);
+        link.textContent = (link.textContent === originalText) ? newTextUpper : originalText;
+        console.log(link.textContent);
+        link.dataset.original = originalText;
+        //Select the corresponding 'catalog-item__content' based on index and toggle the class
         document.querySelectorAll('.catalog-item__content')[i].classList.toggle('catalog-item__content_active');
 
         // Select the corresponding 'catalog-item__list' based on index and toggle the class
         document.querySelectorAll('.catalog-item__list')[i].classList.toggle('catalog-item__list_active');
+    });
+});
+
+// (function ($) {
+//     $(function () {
+
+//         $('ul.catalog__tabs').on('click', 'li:not(.catalog__tab_active)', function () {
+//             $(this)
+//                 .addClass('catalog__tab_active').siblings().removeClass('catalog__tab_active')
+//                 .closest('div.container').find('div.catalog__content').removeClass('catalog__content_active').eq($(this).index()).addClass('catalog__content_active');
+//         });
+
+//     });
+// });
+
+$(function () {
+    $('ul.catalog__tabs').on('click', 'li:not(.catalog__tab_active)', function () {
+        $(this)
+            .addClass('catalog__tab_active').siblings().removeClass('catalog__tab_active')
+            .closest('div.container').find('div.catalog__content').removeClass('catalog__content_active').eq($(this).index())
+            .addClass('catalog__content_active');
     });
 });
