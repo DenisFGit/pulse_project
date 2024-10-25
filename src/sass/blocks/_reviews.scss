@@ -1,0 +1,49 @@
+.reviews {
+    padding-bottom: 48px;
+    &__content {
+        width: 915px;
+        margin: 60px auto 0 auto;
+    }
+    &__item {
+        margin-bottom: 60px;
+        display: flex;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+    &__round {
+        margin-right: 61px;
+    }
+    &__name {
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 100%;
+        color: #0d0d0d;
+        span {
+            font-weight: 500;
+            font-size: 14px;
+            color: #646464;
+            margin-top: 4px;
+        }
+    }
+    &__maraphon {
+        font-weight: 500;
+        font-size: 14px;
+        color: #646464;
+        margin-top: 4px;
+    }
+    &__text {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 150%;
+        color: #0d0d0d;
+        margin-top: 10px;
+        br {
+            content: "";
+            margin: 2em;
+            display: block;
+            font-size: 24%;
+        }
+    }
+
+}
