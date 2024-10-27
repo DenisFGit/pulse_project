@@ -29,23 +29,25 @@ burger.addEventListener('click', function () {
 //     });
 // });
 
+//-------------------SLIDER----------------------
+// var slider = tns({
+//     container: '.carousel__inner',
+//     items: 1,
+//     slideBy: 'page',
+//     autoplay: false,
+//     controls: false,
+//     nav: false
+// });
 
-var slider = tns({
-    container: '.carousel__inner',
-    items: 1,
-    slideBy: 'page',
-    autoplay: false,
-    controls: false,
-    nav: false
-});
+// document.querySelector('.prev').addEventListener('click', function () {
+//     slider.goTo('prev');
+// });
 
-document.querySelector('.prev').addEventListener('click', function () {
-    slider.goTo('prev');
-});
+// document.querySelector('.next').addEventListener('click', function () {
+//     slider.goTo('next');
+// });
 
-document.querySelector('.next').addEventListener('click', function () {
-    slider.goTo('next');
-});
+//--------------------SLIDER---------------------------
 
 // const catalogItemWrapper = document.querySelector('.catalog-item__content');
 // const catalogItemWrapperDesc = document.querySelector('.catalog-item__list');
