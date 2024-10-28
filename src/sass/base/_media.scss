@@ -43,9 +43,9 @@
         }
     }
     .reviews {
-        &__round {
-            display: none;
-        }
+        // &__round {
+        //     display: none;
+        // }
         &__content {
             width: 670px;
         }
@@ -91,6 +91,23 @@
         }
         &__content {
             justify-content: space-around;
+        }
+    }
+    .reviews {
+        &__content {
+            width: 530px;
+        }
+        &__item {
+            flex-direction: column;
+            align-items: center;
+        }
+        &__round {
+            margin-right: 0;
+            margin-bottom: 10px;
+        }
+        &__name,
+        &__maraphon {
+            text-align: center;
         }
     }
 }
@@ -175,5 +192,39 @@
     }
     .feed-form {
         width: 270px;
+    }
+    .catalog {
+        &__tabs {
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+        &__tab {
+            &:hover {
+                box-shadow: 2px 2px 10px #6b6b6b;
+                border: none;
+            }
+        }
+    }
+    .reviews {
+        &__round {
+            display: none;
+        }
+        &__content {
+            width: 300px;
+        }
+        &__name,
+        &__maraphon {
+            text-align: left;
+        }
+        &__name,
+        &__text {
+            font-size: 14px;
+        }
+        &__maraphon {
+            font-size: 12px;
+        }
     }
 }
