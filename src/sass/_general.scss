@@ -3,6 +3,9 @@
     margin: 0 auto;
     position: relative;
 }
+body {
+    position: relative;
+}
 
 @import 'blocks/promo';
 @import 'blocks/header';
@@ -19,5 +22,6 @@
 @import 'blocks/reviews';
 @import 'blocks/footer';
 @import 'blocks/modal';
+@import 'blocks/pageup';
 
 // color: green
