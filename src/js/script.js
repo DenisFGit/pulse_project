@@ -49,78 +49,6 @@ document.querySelector('.next').addEventListener('click', function () {
 
 //--------------------SLIDER---------------------------
 
-// const catalogItemWrapper = document.querySelector('.catalog-item__content');
-// const catalogItemWrapperDesc = document.querySelector('.catalog-item__list');
-// console.log(catalogItemWrapperDesc);
-// const img = document.getElementsByClassName('catalog-item__first-price');
-// console.log(img);
-
-// for (let i = 0; i < img.length; i++) {
-//     img[i].addEventListener('click', function () {
-//         catalogItemWrapperDesc.classList.toggle('catalog-item__list_active');
-//         catalogItemWrapper.classList.toggle('catalog-item__content_hidden')
-//     })
-// }
-//-------------------работает---------------------
-
-// const catalogItemWrapper = document.querySelectorAll('.catalog-item__wrapper');
-// const catalogItemWrapperDesc = document.getElementsByClassName('catalog-item__wrapper-desc');
-// console.log(catalogItemWrapperDesc);
-// const img = document.getElementsByClassName('catalog-item__img');
-// console.log(img);
-
-// for (let i = 0; i < img.length; i++) {
-//     img[i].addEventListener('click', function () {
-//         catalogItemWrapperDesc.classList.toggle('catalog-item__wrapper-desc_active')
-//     })
-// }
-
-// let content = document.querySelector('.catalog-item__content');
-// console.log(content);
-// let list = document.querySelector('.catalog-item__list');
-
-// let price = document.getElementsByClassName('catalog-item__first-price');
-
-// for (let i = 0; i < price.length; i++) {
-//     price[i].addEventListener('click', function () {
-//         content.classList.toggle('catalog-item__content_active');
-//         list.classList.toggle('catalog-item__list_active');
-//     })
-// }
-
-//============вариант с перемещением по translateX() =========================
-
-
-// $('.catalog-item__first-price').each(function (i) {
-//     $(this).on('click', function (e) {
-//         e.preventDefault();
-//         $('.catalog-item__content').eq(i).toggleClass('catalog-item__content_active');
-//         $('.catalog-item__list').eq(i).toggleClass('catalog-item__list_active');
-//     })
-// })
-
-
-// // Select all elements with the class 'catalog-item__first-price'
-// document.querySelectorAll('.catalog-item__link').forEach(function (element, i) {
-//     // Add a click event listener to each element
-//     element.addEventListener('click', function (e) {
-//         e.preventDefault(); // Prevent the default action of the element
-
-//         // Toggle the 'catalog-item__content_active' class on all elements with the class 'catalog-item__content'
-//         document.querySelectorAll('.catalog-item__content').forEach(function (content) {
-//             content.classList.toggle('catalog-item__content_active');
-//         });
-
-//         // Toggle the 'catalog-item__list_active' class on all elements with the class 'catalog-item__list'
-//         document.querySelectorAll('.catalog-item__list').forEach(function (list) {
-//             list.classList.toggle('catalog-item__list_active');
-//         });
-//     });
-// });
-
-//----------------for all elements in the moment-------------------------
-
-// Select all elements with the class 'catalog-item__first-price'
 
 document.querySelectorAll('.catalog-item__link').forEach(function (element, i) {
     // Add a click event listener to each element
@@ -162,9 +90,6 @@ $(function () {
     $('.modal__close').on('click', function () {
         $('.overlay, #consultation, #order, #thanks').fadeOut();
     });
-    // $('.button_tab').on('click', function () {
-    //     $('.overlay, #order').fadeIn();
-    // })
 
     $('.button_tab').each(function (i) {
         $(this).on('click', function () {
@@ -172,27 +97,6 @@ $(function () {
             $('.overlay, #order').fadeIn();
         });
     });
-
-    // $('#consultation-form').validate();
-    // $('#consultation form').validate({
-    //     rules: {
-    //         name: "required",
-    //         phone: "required",
-    //         email: {
-    //             required: true,
-    //             email: true
-    //         }
-    //     },
-    //     messages: {
-    //         name: "Пожалуйста введите свое имя",
-    //         phone: "Пожалуйста введите свой номер телефона",
-    //         email: {
-    //             required: "Пожалуйста введите свою почту",
-    //             email: "Ваша почта должна быть в формате name@domain.com"
-    //         }
-    //     }
-    // });
-    // $('#order form').validate();
 
 
     function validateForm(form) {
@@ -222,26 +126,6 @@ $(function () {
 
     $('input[name=phone]').mask("+38(999) 999-99-99");
 
-    // $('form').submit(function (e) {
-    //     e.preventDefault();
-
-    //     // if (!$(this).valid()) {
-    //     //     return;
-    //     // }
-
-    //     $.ajax({
-    //         type: "POST",
-    //         url: "mailer/smart.php",
-    //         data: $(this).serialize()
-    //     }).done(function () {
-    //         $(this).find("input").val("");
-    //         $('#consultation, #order').fadeOut();
-    //         $('.overlay, #thanks').fadeIn('slow');
-
-    //         $('form').trigger('reset');
-    //     });
-    //     return false;
-    // });
 
     //Smooth scroll
 
@@ -254,7 +138,7 @@ $(function () {
         }
     });
 
-    $("a[href=#up]").click(function () {
+    $("a[href^='#up']").click(function () {
         const _href = $(this).attr("href");
         $("html, body").animate({ scrollTop: $(_href).offset().top + "px" });
         return false;

@@ -2,6 +2,11 @@
     font-family: "Roboto", sans-serif;
 }
 
+@import "libs/bootstrap-reboot.min";
+@import "libs/font_style";
+@import "libs/slick";
+@import "libs/animate";
+
 @import "base/variables";
 @import "base/mixins";
 @import "general";
