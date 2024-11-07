@@ -11,7 +11,7 @@ gulp.task('server', function () {
 
     browserSync({
         server: {
-            baseDir: "dist"
+            baseDir: "src"
         }
     });
 
@@ -24,7 +24,7 @@ gulp.task('styles', function () {
         .pipe(rename({ suffix: '.min', prefix: '' }))
         .pipe(autoprefixer())
         .pipe(cleanCSS({ compatibility: 'ie8' }))
-        .pipe(gulp.dest("dist/css"))
+        .pipe(gulp.dest("src/css"))
         .pipe(browserSync.stream());
 });
 
@@ -58,7 +58,8 @@ gulp.task('icons', function () {
 gulp.task('images', function () {
     return gulp.src("src/img/**/*", { encoding: false })
         .pipe(imagemin())
-        .pipe(gulp.dest("dist/img"));
+        .pipe(gulp.dest("dist/img"))
 });
+// gulp.watch("src/*.html").on('change', browserSync.reload);
 
 gulp.task('default', gulp.parallel('watch', 'server', 'styles', 'scripts', 'fonts', 'icons', 'html', 'images'));
